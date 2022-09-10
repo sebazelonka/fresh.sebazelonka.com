@@ -1,0 +1,121 @@
+@import url('https://rsms.me/inter/inter.css');
+
+html { font-family: 'Inter', sans-serif; }
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+}
+
+.hello h1 {
+    font-size: clamp(5rem, 35vw, 35rem);
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: -2px;
+    background: rgb(251,191,36);
+    background: linear-gradient(180deg, rgba(251,191,36,1) 0%, rgba(239,68,81,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.social {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: '. links .';
+}
+
+    .links {
+        grid-area: links;
+    }
+
+        .links a {
+            font-weight: 600;
+            display: block;
+            text-decoration: none;
+            color: black;
+            margin-bottom: 1rem;
+        }
+
+        .links a:first-of-type {
+            margin-bottom: 2rem;
+        }
+
+.personal {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: '. photo photo . bio bio bio bio bio bio bio .';
+    margin-top: 12rem;
+}
+
+.personal .pic {
+    grid-area: photo;
+    width: 100%;
+}
+
+.personal .bio {
+    grid-area: bio;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.articles {
+    margin-top: 3rem;
+}
+
+.articles .title {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: '. latest latest latest latest latest latest latest latest . . .'
+    '. . . . . articles articles articles articles articles articles articles';
+}
+
+.articles .title span {
+    font-size: 10rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.articles .title .latest {
+    grid-area: latest;
+}
+
+.articles .title .articles {
+    grid-area: articles;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 'latest latest latest'
+    'post-1 post-2 link';
+}
+
+.posts h2:nth-child(1) {
+    grid-area: latest;
+    background-color: red;
+}
+
+.posts h2:nth-child(2) {
+    grid-area: post-1;
+    background-color: blue;
+}
+
+.posts h2:nth-child(3) {
+    grid-area: post-2;
+    background-color: yellow;
+}
