@@ -25,7 +25,7 @@ Si bien no soy un experto desarrollador frontend, luego de más de 8 años de ex
 
 Parte de este aporte, sin dudas está relacionado con la posibilidad de poder hablar con los desarrolladores "de igual a igual" y este sitio es parte de mi camino hacia eso.
 
-# Stack actual
+## Stack actual
 
 Actualmente, estoy usando lo que se conoce como [JAMstack](https://jamstack.org/). Particularmente, la base del sitio la hice usando [Netlify CMS](https://www.netlifycms.org/) y el código está en [Gitlab](https://gitlab.com/), ya que me permitía taner repos privados a costo 0.
 

@@ -7,7 +7,7 @@ export default function App({ Component }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" href="/styles.css" media="screen" />
       </Head>
       <Header />
       <Component />

@@ -1,7 +1,4 @@
-import {
-  HandlerContext,
-  PageProps,
-} from "$fresh/server.ts";
+import { HandlerContext, PageProps } from "$fresh/server.ts";
 
 export const handler = async (
   _req: Request,
@@ -19,8 +16,8 @@ export const handler = async (
     }
   }
 
-  const latestArticles = fileNames.reverse().slice(-3)
-  console.log('files from index',latestArticles);
+  const latestArticles = fileNames.reverse().slice(-3);
+  console.log("files from index", latestArticles);
 
   return ctx.render({ latestArticles });
 };
@@ -59,20 +56,18 @@ export default function Home(props: PageProps) {
       </section>
       <section class="articles">
         <div className="title">
-
-            <span class="latest">Latest</span>
-            <span class="articles">Articles</span>
-
+          <span class="latest">Latest</span>
+          <span class="articles">Articles</span>
         </div>
         <div class="posts">
           {latestArticles.map((file: string) => (
-            <h2>
-              <a href={`posts/${file}`}>{file}</a>
-            </h2>
+            <a class="article" href={`posts/${file}`}>
+              <h2>{file}</h2>
+            </a>
           ))}
-          <h2>
-              <a href='/blog'>View all -&gt;</a>
-            </h2>
+          <h2 class="article view-all">
+            <a href="/blog">View all -&gt;</a>
+          </h2>
         </div>
       </section>
     </>
