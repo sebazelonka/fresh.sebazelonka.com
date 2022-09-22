@@ -37,7 +37,7 @@ export default function BlogPostPage(props: PageProps) {
     <>
       <section
         class="article-title"
-        style={`background-image: url(${_data.image})`}
+        // style={`background-image: url(${_data.image})`}
       >
         <div className="data">
           <h3>{date}</h3>

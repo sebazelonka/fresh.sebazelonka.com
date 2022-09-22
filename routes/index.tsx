@@ -9,7 +9,7 @@ export const handler = async (
   const fileNames: string[] = [];
 
   for await (const dirEntry of Deno.readDir("./routes/posts/")) {
-    if (dirEntry.isFile && dirEntry.name.match(/[a-z0-9].md/i)) {
+    if (dirEntry.isFile && dirEntry.name.replace(".md", "")) {
       const fileName = dirEntry.name.slice(0, -3);
 
       fileNames.push(fileName);
@@ -55,10 +55,7 @@ export default function Home(props: PageProps) {
         </p>
       </section>
       <section class="articles">
-        <div className="title">
-          <span class="latest">Latest</span>
-          <span class="articles">Articles</span>
-        </div>
+        <div className="title">Latest Articles</div>
         <div class="posts">
           {latestArticles.map((file: string) => (
             <a class="article" href={`posts/${file}`}>

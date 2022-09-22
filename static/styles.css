@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
 
 html {
+    box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
 
 *,
-*::after,
-*::before {
-    box-sizing: border-box;
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 p,
@@ -21,14 +22,42 @@ body {
     margin: 0;
 }
 
-nav {
+.nav {
     display: flex;
     justify-content: space-between;
     padding: 3rem 1rem;
 }
 
+.nav .nav__title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: black;
+}
+
+.nav .nav__link {
+    font-size: 1rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: black;
+    margin-left: 1rem;
+}
+
+.nav .nav__link:hover {
+
+    color: red;
+
+}
+
+.hello {
+    display: flex;
+    justify-content: center;
+}
+
 .hello h1 {
-    font-size: clamp(5rem, 35vw, 35rem);
+    font-size: clamp(5rem, 32vw, 32rem);
+    /* font-size: calc(16px * 10 + 1vw); */
+    text-align: center;
     margin: 0;
     font-weight: 900;
     letter-spacing: -2px;
@@ -75,7 +104,7 @@ nav {
 
 .personal .bio {
     grid-area: bio;
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 6vw, 3rem);
     margin: 0;
 }
 
@@ -83,27 +112,11 @@ nav {
     margin-top: 3rem;
 }
 
-.articles .title {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: '. latest latest latest latest latest latest latest latest . . .'
-        '. . . . . articles articles articles articles articles articles articles';
-}
-
-.articles .title span {
-    font-size: 10rem;
+.articles .title  {
+    font-size: clamp(4rem, 20vw, 7rem);
     font-weight: 900;
     margin: 0;
     line-height: 1;
-}
-
-.articles .title .latest {
-    grid-area: latest;
-}
-
-.articles .title .articles {
-    grid-area: articles;
 }
 
 .posts {
@@ -197,7 +210,8 @@ nav {
     text-align: center;
     padding: 3rem 0 2rem;
     margin-top: 3rem;
-    background-color: lightgray;
+    background-color: black;
+    color: white
 }
 
 /* article */
@@ -206,26 +220,42 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 75vh;
     background-size: cover;
     margin-bottom: 3rem;
-    background: rgb(251, 191, 36);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
 }
 
-.article-title .data {
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
 
-    padding: 1rem 2rem;
-    min-width: 50%;
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.article-title .data {
     text-align: center;
+    color: white
 }
 
 .article-title h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+    /* font-weight: 700; */
 }
 
 .article-title h3 {
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
 }
 
 .article-container {
